@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "package": {
+        "version": "{{ version }}"
+    },
+    "service": {
+        "name": "{{ container_name }}"
+    },
+    "container": {
+        "privileged": true
+    },
+    "processes": [
+        {
+            "critical": true,
+            "name": "cpu-report",
+            "command": "/usr/bin/cpu-report.py"
+        }
+    ]
+}
