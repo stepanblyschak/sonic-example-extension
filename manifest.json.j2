@@ -1,7 +1,24 @@
 {
     "version": "1.0.0",
     "package": {
-        "version": "{{ version }}"
+        "version": "{{ version }}",
+        "changelog": {
+            "1.0.0": {
+                "changes": ["Initial release"],
+                "author": "Stepan Blyshchak",
+                "email": "stepanb@nvidia.com",
+                "date": "Mon, 25 May 2020 12:24:30 +0300"
+            },
+            "1.1.0": {
+                "changes": [
+                    "Added functionality",
+                    "Bug fixes"
+                ],
+                "author": "Stepan Blyshchak",
+                "email": "stepanb@nvidia.com",
+                "date": "Fri, 23 Oct 2020 12:26:08 +0300"
+            }
+        }
     },
     "service": {
         "name": "{{ container_name }}"
