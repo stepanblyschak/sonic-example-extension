@@ -1,4 +1,4 @@
-FROM python:3
+FROM urm.nvidia.com/sw-nbu-sws-sonic-docker/sonic-sdk:sae-integration.2-f626efb_Internal
 
 ARG manifest
 
@@ -11,3 +11,4 @@ COPY show.py /show.py
 LABEL com.azure.sonic.manifest="$manifest"
 
 ENTRYPOINT ["/usr/bin/cpu-report.py"]
+

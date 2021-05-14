@@ -22,16 +22,23 @@
         }
     },
     "service": {
-        "name": "{{ container_name }}"
+        "name": "{{ container_name }}",
+        "warm-shutdown": {
+            "after": ["swss"],
+            "before": ["syncd"]
+        },
+        "fast-shutdown": {
+            "before": ["swss"]
+        }
     },
     "container": {
         "privileged": true
     },
     "processes": [
         {
-            "critical": true,
             "name": "cpu-report",
-            "command": "/usr/bin/cpu-report.py"
+            "command": "/usr/bin/cpu-report.py",
+            "reconciles": true
         }
     ],
     "cli": {
