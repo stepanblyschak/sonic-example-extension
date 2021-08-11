@@ -1,12 +1,12 @@
-FROM urm.nvidia.com/sw-nbu-sws-sonic-docker/sonic-sdk:sae-integration.2-f626efb_Internal
+FROM python:3
 
 ARG manifest
 
 RUN pip install psutil
 
-COPY cpu-report.py /usr/bin/cpu-report.py
+COPY cpu-report/cpu-report.py /usr/bin/cpu-report.py
 
-COPY show.py /show.py
+COPY cli/ /cli/
 
 LABEL com.azure.sonic.manifest="$manifest"
 

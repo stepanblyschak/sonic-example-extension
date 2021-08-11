@@ -2,9 +2,29 @@
 
 This repository contains an example SONiC compatible Docker image - a SONiC Package.
 
-## Build
+## Prerequisites
 
 You need to have ```j2cli``` and ```docker``` installed.
+
+
+Build SONiC SDK docker images using sonic-buildimage repository:
+
+```
+$ git clone https://github.com/azure/sonic-buildimage
+$ cd sonic-buildimage
+$ make init
+$ make configure PLATFORM=generic
+$ make target/sonic-sdk.gz target/sonic-sdk-buildenv.gz
+```
+
+Load into docker:
+
+```
+$ docker load < target/sonic-sdk.gz
+$ docker load < target/sonic-sdk-buildenv.gz
+```
+
+## Build
 
 To build SONiC Package:
 
